@@ -1,0 +1,27 @@
+{
+	"name": "api_pl",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Name",
+					"value": "XYZ"
+				}
+			}
+		],
+		"variables": {
+			"Name": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
