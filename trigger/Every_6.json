@@ -1,0 +1,28 @@
+{
+	"name": "Every_6",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "parent_pl",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"P_Configuration_Table": "dbo.CONFIG",
+					"P_Frequency_In_Mniutes": "360"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 6,
+				"startTime": "2026-10-27T02:20:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}

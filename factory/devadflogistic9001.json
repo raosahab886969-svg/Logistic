@@ -1,0 +1,15 @@
+{
+	"name": "devadflogistic9001",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "westus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a4477efe-4b33-4024-a319-02b16eb7e5be",
+		"tenantId": "7513aac8-db25-4c23-b88c-1710f7920be7"
+	}
+}

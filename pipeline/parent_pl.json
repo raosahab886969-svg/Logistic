@@ -1,0 +1,82 @@
+{
+	"name": "parent_pl",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "child_pl",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"P_Configuration_Table": {
+							"value": "@pipeline().parameters.P_Configuration_Table",
+							"type": "Expression"
+						},
+						"P_Frequency_In_Mniutes": {
+							"value": "@pipeline().parameters.P_Frequency_In_Mniutes",
+							"type": "Expression"
+						},
+						"P_Mater_Pipeline_Run_Id": {
+							"value": "@variables('V_Master_Pipeline_Run_Id')",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "V_Master_Pipeline_Run_Id",
+					"value": {
+						"value": "@pipeline().RunId",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"P_Configuration_Table": {
+				"type": "string",
+				"defaultValue": "dbo.CONFIG"
+			},
+			"P_Frequency_In_Mniutes": {
+				"type": "string",
+				"defaultValue": "1440"
+			}
+		},
+		"variables": {
+			"Name": {
+				"type": "String"
+			},
+			"V_Master_Pipeline_Run_Id": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-10-27T02:41:07Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

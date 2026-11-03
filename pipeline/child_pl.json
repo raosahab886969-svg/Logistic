@@ -1,0 +1,43 @@
+{
+	"name": "child_pl",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Name",
+					"value": {
+						"value": "@pipeline().parameters.P_Mater_Pipeline_Run_Id",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"P_Configuration_Table": {
+				"type": "string"
+			},
+			"P_Frequency_In_Mniutes": {
+				"type": "string"
+			},
+			"P_Mater_Pipeline_Run_Id": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"Name": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-10-27T02:41:06Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

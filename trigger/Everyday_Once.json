@@ -1,0 +1,28 @@
+{
+	"name": "Everyday_Once",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "parent_pl",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"P_Configuration_Table": "dbo.CONFIG",
+					"P_Frequency_In_Mniutes": "1440"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 24,
+				"startTime": "2026-10-27T02:19:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
